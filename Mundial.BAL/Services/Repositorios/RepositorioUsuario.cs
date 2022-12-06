@@ -91,7 +91,8 @@ namespace Mundial.BAL.Services.Repositorios
             try
             {
                 var _usuario = await _context.Usuario.Select(u => new UsuarioDto()
-                {                    
+                {              
+                    UsuariosId = u.UsuarioId,
                     Nombre = u.Nombre,
                     Clave = u.Clave,
                     Tipo = u.Tipo
@@ -118,6 +119,7 @@ namespace Mundial.BAL.Services.Repositorios
             {
                 var usuario = await _context.Usuario.Select(u => new UsuarioDto()
                 {                    
+                    UsuariosId = u.UsuarioId,
                     Nombre = u.Nombre,
                     Clave = u.Clave,
                     Tipo = u.Tipo

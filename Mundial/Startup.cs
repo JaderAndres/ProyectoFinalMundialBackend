@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mundial.BAL.Entities.Repositorio;
+using Mundial.BAL.Entitys.Interfaces;
 using Mundial.BAL.Services.Interfaces;
 using Mundial.BAL.Services.Repositorios;
 using Mundial.DAL.Entities;
@@ -33,6 +35,7 @@ namespace Mundial
             services.AddMvc().AddFluentValidation(c => c.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly()));
 
             services.AddTransient<IUsuarios, RepositorioUsuario>();
+            services.AddTransient<IResultados, RepositorioResultado>();
 
         }
 
